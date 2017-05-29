@@ -1,0 +1,105 @@
+{
+  "project_info": {
+    "project_number": "534867384204",
+    "firebase_url": "https://imagebase-1d29d.firebaseio.com",
+    "project_id": "imagebase-1d29d",
+    "storage_bucket": "imagebase-1d29d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:534867384204:android:30faba9b23cbaa76",
+        "android_client_info": {
+          "package_name": "com.example.junnel_lalaine.firebaseretrieval"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "534867384204-jt1171lr064hllj3kdjgtub0o39v36qg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.junnel_lalaine.firebaseretrieval",
+            "certificate_hash": "d9107f937036be8983889ad41ce89c4f1e1a9300"
+          }
+        },
+        {
+          "client_id": "534867384204-pbeam74q8dohhdm6a8k2rrb4tv5tr8uk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYqShaoA11h597rX_q2VQG1wzOAiZf9H8"
+        },
+        {
+          "current_key": "AIzaSyAyP0QGY_hIKZHgah1A9pbJ2iRmWBZMKFk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "534867384204-pbeam74q8dohhdm6a8k2rrb4tv5tr8uk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:534867384204:android:757f8d2cc18a77c4",
+        "android_client_info": {
+          "package_name": "com.example.junnel_lalaine.firebaseuploadimage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "534867384204-nbnij31909s98s4l78pbfjajp8qb9ccr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.junnel_lalaine.firebaseuploadimage",
+            "certificate_hash": "d9107f937036be8983889ad41ce89c4f1e1a9300"
+          }
+        },
+        {
+          "client_id": "534867384204-pbeam74q8dohhdm6a8k2rrb4tv5tr8uk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYqShaoA11h597rX_q2VQG1wzOAiZf9H8"
+        },
+        {
+          "current_key": "AIzaSyAyP0QGY_hIKZHgah1A9pbJ2iRmWBZMKFk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "534867384204-pbeam74q8dohhdm6a8k2rrb4tv5tr8uk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
