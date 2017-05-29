@@ -1,5 +1,7 @@
 package com.example.junnel_lalaine.firebaseuploadimage;
 
+import android.accounts.Account;
+import android.accounts.AccountManager;
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.Intent;
@@ -13,6 +15,7 @@ import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -33,11 +36,16 @@ public class MainActivity extends AppCompatActivity {
     private DatabaseReference mDatabaseRef;
     private ImageView imageView;
     private EditText txtImageName;
+    private TextView emailEditText;
+    private TextView fullNameEditText;
     private Uri imgUri;
+    private String user_name = "Junnel";
 
     public static final String FB_STORAGE_PATH = "image/";
     public static final String FB_DATABASE_PATH = "image/";
     public static final int REQUEST_CODE = 1234;
+
+    //Google Accounts
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +57,23 @@ public class MainActivity extends AppCompatActivity {
 
         imageView = (ImageView) findViewById(R.id.imageView);
         txtImageName = (EditText) findViewById(R.id.txtImageName);
+
+        AccountManager manager = (AccountManager) getSystemService(ACCOUNT_SERVICE);
+        Account[] list = manager.getAccounts();
+        String gmail = null;
+
+        for(Account account: list)
+        {
+            if(account.type.equalsIgnoreCase("com.google"))
+            {
+                gmail = account.name;
+                break;
+            }
+        }
+
+        Toast.makeText(getApplicationContext(), gmail, Toast.LENGTH_LONG).show();
+
+
 
     }
 
@@ -77,7 +102,19 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-
+   /*
+    //getAccount
+    public static Account getAccount(AccountManager accountManager) {
+        Account[] accounts = accountManager.getAccountsByType("com.google");
+        Account account;
+        if (accounts.length > 0) {
+            account = accounts[0];
+        } else {
+            account = null;
+        }
+        return account;
+    }
+*/
     public String getImageExt(Uri uri) {
         ContentResolver contentResolver = getContentResolver();
         MimeTypeMap mimeTypeMap = MimeTypeMap.getSingleton();
@@ -100,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
                     //Dismiss dialog when done
                     dialog.dismiss();
                     Toast.makeText(getApplicationContext(), "Image uploaded", Toast.LENGTH_SHORT).show();
-                    ImageUpload imageUpload = new ImageUpload(txtImageName.getText().toString(), taskSnapshot.getDownloadUrl().toString());
+                    ImageUpload imageUpload = new ImageUpload(txtImageName.getText().toString(), taskSnapshot.getDownloadUrl().toString(), user_name);
 
                     // /Save image info into firebase database
                     String uploadId = mDatabaseRef.push().getKey();
@@ -126,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
                             //Show upload progress
 
                             double progress = (100 * taskSnapshot.getBytesTransferred()) / taskSnapshot.getTotalByteCount();
-                            dialog.setMessage("Uploaded " + (int)progress+"0");
+                            dialog.setMessage("Uploaded " + (int)progress+"");
                         }
                     });
 

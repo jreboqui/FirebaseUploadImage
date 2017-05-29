@@ -8,6 +8,9 @@ public class ImageUpload {
 
     public String name;
     public String url;
+    public String owner;
+
+    public String getOwner() { return owner; }
 
     public String getName(){
         return name;
@@ -17,8 +20,9 @@ public class ImageUpload {
         return url;
     }
 
-    public ImageUpload(String name, String url) {
+    public ImageUpload(String name, String url, String owner) {
         this.name = name;
         this.url = url;
+        this.owner = owner;
     }
 }
